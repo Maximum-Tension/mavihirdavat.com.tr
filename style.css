@@ -1,3 +1,17 @@
+/******************************************************************************\
+# CSS - style                                    #       Maximum Tension       #
+################################################################################
+#                                                #      -__            __-     #
+# Teoman Deniz                                   #  :    :!1!-_    _-!1!:    : #
+# maximum-tension.com                            #  ::                      :: #
+#                                                #  :!:    : :: : :  :  ::::!: #
+# +.....................++.....................+ #   :!:: :!:!1:!:!::1:::!!!:  #
+# : C - Maximum Tension :: Create - 2026/09/12 : #   ::!::!!1001010!:!11!!::   #
+# :---------------------::---------------------: #   :!1!!11000000000011!!:    #
+# : License - MIT       :: Update - 2026/09/12 : #    ::::!!!1!!1!!!1!!!::     #
+# +.....................++.....................+ #       ::::!::!:::!::::      #
+\******************************************************************************/
+
 *
 {
 	    margin: 0;
@@ -32,20 +46,40 @@ body
 	background: #226ED4;
 }
 
-::-webkit-scrollbar
+/* *************************** [v] SCROLL BAR [v] *************************** */
+*::-webkit-scrollbar
 {
-	width: 11px;
+	width: 12px;
 }
 
-::-webkit-scrollbar-track
+*::-webkit-scrollbar-track
 {
 	background: #1B1D20;
 }
 
-::-webkit-scrollbar-thumb
+*::-webkit-scrollbar-thumb
 {
-	   background: linear-gradient(#222ed4, #14156b);
-	border-radius: 6px;
+	   background: linear-gradient(#222ED4, #14156B);
+	border-radius: 2px;
+}
+
+*::-webkit-scrollbar-thumb:hover
+{
+	background: linear-gradient(#626CF5, #292A96);
+}
+
+@supports (-ms-ime-align: auto)
+{
+	*::-webkit-scrollbar-thumb:hover
+	{
+		box-shadow: none !important; /* simplify the effect in edge */
+	}
+}
+/* *************************** [^] SCROLL BAR [^] *************************** */
+
+body h1.seo
+{
+	display: none;
 }
 
 .page
@@ -59,29 +93,29 @@ body
 	                    top: 0;
 	                   left: 0;
 	                  right: 0;
-	                 height: 84px;
+	                 height: 154px;
 	                z-index: 90;
 	                display: flex;
 	               position: fixed;
 	             box-shadow: none;
 	             background: rgba(18, 19, 21, 0.25);
 	            align-items: center;
-	          border-bottom: 1px solid rgba(255, 255, 255, 0);
-
-	-webkit-backdrop-filter: blur(10px);
 	        backdrop-filter: blur(10px);
 
-	     -webkit-transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
-	        -moz-transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
-	          -o-transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
-	             transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+	-webkit-backdrop-filter: blur(20px);
+	        backdrop-filter: blur(20px);
+
+	     -webkit-transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease, height 1s ease;
+	        -moz-transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease, height 1s ease;
+	          -o-transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease, height 1s ease;
+	             transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease, height 1s ease;
 }
 
 .header.scrolled
 {
-	         box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
-	         background: rgba(18, 19, 21, 0.94);
-	border-bottom-color: rgba(255, 255, 255, 0.08);
+	    height: 84px;
+	box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+	background: rgb(18 19 21 / 81%);
 }
 
 .header_inner
@@ -123,16 +157,43 @@ body
 .logo_title
 {
 	             color: #004FFF;
-	         font-size: 32px;
+	         font-size: 56px;
 	        text-align: center;
 	       font-family: "oswald", sans-serif;
 	       font-weight: 900;
 	    letter-spacing: -1px;
 
-	-webkit-transition: color 0.35s ease;
-	   -moz-transition: color 0.35s ease;
-	     -o-transition: color 0.35s ease;
-	        transition: color 0.35s ease;
+	-webkit-transition: font-size 1s ease;
+	   -moz-transition: font-size 1s ease;
+	     -o-transition: font-size 1s ease;
+	        transition: font-size 1s ease;
+}
+
+.logo_subtitle
+{
+	             color: #FFF;
+	           padding: 3px;
+	         font-size: 21px;
+	        margin-top: 2px;
+	        text-align: center;
+	       font-weight: 900;
+	    letter-spacing: 0px;
+	  background-color: #3122D4;
+
+	-webkit-transition: font-size 1s ease;
+	   -moz-transition: font-size 1s ease;
+	     -o-transition: font-size 1s ease;
+	        transition: font-size 1s ease;
+}
+
+.header.scrolled .logo_title
+{
+	font-size: 32px;
+}
+
+.header.scrolled .logo_subtitle
+{
+	font-size: 12px;
 }
 
 .nav
@@ -263,7 +324,7 @@ body
 .hero
 {
 	    display: flex;
-	    padding: 120px 0 70px;
+	    padding: 200px 0 70px;
 	   overflow: hidden;
 	   position: relative;
 	 min-height: 100vh;
@@ -467,7 +528,7 @@ body
 
 .hero_script
 {
-	            color: #F3C8CB;
+	            color: #C8CBF3;
 	           margin: 6px 0 0;
 	        font-size: clamp(28px, 4vw, 40px);
 	      font-family: "great vibes", cursive;
@@ -480,7 +541,7 @@ body
 
 .hero_lead
 {
-	            color: #E7D6D8;
+	            color: #D7D6E7;
 	           margin: 20px 0 0;
 	        font-size: clamp(15px, 1.6vw, 18.5px);
 	        max-width: 480px;
@@ -580,7 +641,7 @@ body
 
 .stat_label
 {
-	         color: #CFA9AD;
+	         color: #B0A9CF;
 	     font-size: 12.5px;
 	   font-weight: 600;
 	letter-spacing: 1.5px;
@@ -1394,7 +1455,6 @@ body
 	letter-spacing: -1px;
 }
 
-.logo_subtitle,
 .footer_logo_subtitle
 {
 	           color: #FFF;
@@ -1863,8 +1923,8 @@ body
 	{
 		          opacity: 0;
 
-		-webkit-transform: translateY(120px) scaleY(1.3);
-		        transform: translateY(120px) scaleY(1.3);
+		-webkit-transform: translateY(240px) scaleY(1.3);
+		        transform: translateY(240px) scaleY(1.3);
 	}
 }
 
@@ -1892,8 +1952,8 @@ body
 	{
 		       opacity: 0;
 
-		-moz-transform: translateY(120px) scaleY(1.3);
-		     transform: translateY(120px) scaleY(1.3);
+		-moz-transform: translateY(240px) scaleY(1.3);
+		     transform: translateY(240px) scaleY(1.3);
 	}
 }
 
@@ -1921,8 +1981,8 @@ body
 	{
 		     opacity: 0;
 
-		-o-transform: translateY(120px) scaleY(1.3);
-		   transform: translateY(120px) scaleY(1.3);
+		-o-transform: translateY(240px) scaleY(1.3);
+		   transform: translateY(240px) scaleY(1.3);
 	}
 }
 
@@ -1949,7 +2009,7 @@ body
 	{
 		  opacity: 0;
 
-		transform: translateY(120px) scaleY(1.3);
+		transform: translateY(240px) scaleY(1.3);
 	}
 }
 
