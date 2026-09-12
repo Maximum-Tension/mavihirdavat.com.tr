@@ -122,11 +122,12 @@ body
 
 .logo_title
 {
-	             color: #FFF;
-	         font-size: 25px;
+	             color: #004FFF;
+	         font-size: 32px;
+	        text-align: center;
 	       font-family: "oswald", sans-serif;
-	       font-weight: 700;
-	    letter-spacing: 3px;
+	       font-weight: 900;
+	    letter-spacing: -1px;
 
 	-webkit-transition: color 0.35s ease;
 	   -moz-transition: color 0.35s ease;
@@ -1378,12 +1379,6 @@ body
 	align-items: center;
 }
 
-.footer_logo_mark
-{
-	 width: auto;
-	height: 42px;
-}
-
 .footer_logo_text
 {
 	line-height: 1;
@@ -1391,21 +1386,25 @@ body
 
 .footer_logo_title
 {
-	         color: #FFF;
-	     font-size: 23px;
+	         color: #004FFF;
+	     font-size: 32px;
+	    text-align: center;
 	   font-family: "oswald", sans-serif;
-	   font-weight: 700;
-	letter-spacing: 3px;
+	   font-weight: 900;
+	letter-spacing: -1px;
 }
 
 .logo_subtitle,
 .footer_logo_subtitle
 {
-	         color: #3122D4;
-	     font-size: 12px;
-	    margin-top: 2px;
-	   font-weight: 600;
-	letter-spacing: 4px;
+	           color: #FFF;
+	         padding: 3px;
+	       font-size: 12px;
+	      margin-top: 2px;
+	      text-align: center;
+	     font-weight: 900;
+	  letter-spacing: 0px;
+	background-color: #3122D4;
 }
 
 .footer_about
