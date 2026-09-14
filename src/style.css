@@ -8,15 +8,18 @@
 # +.....................++.....................+ #   :!:: :!:!1:!:!::1:::!!!:  #
 # : C - Maximum Tension :: Create - 2026/09/12 : #   ::!::!!1001010!:!11!!::   #
 # :---------------------::---------------------: #   :!1!!11000000000011!!:    #
-# : License - MIT       :: Update - 2026/09/12 : #    ::::!!!1!!1!!!1!!!::     #
+# : License - MIT       :: Update - 2026/09/14 : #    ::::!!!1!!1!!!1!!!::     #
 # +.....................++.....................+ #       ::::!::!:::!::::      #
 \******************************************************************************/
 
 *
 {
-	    margin: 0;
-	   padding: 0;
-	box-sizing: border-box;
+	            margin: 0;
+	           padding: 0;
+
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
 }
 
 html
@@ -59,12 +62,23 @@ body
 
 *::-webkit-scrollbar-thumb
 {
-	   background: linear-gradient(#222ED4, #14156B);
-	border-radius: 2px;
+	           background: -webkit-gradient(linear, left top, left bottom, from(#222ED4), to(#14156B));
+	           background: -webkit-linear-gradient(#222ED4, #14156B);
+	           background: -moz-linear-gradient(#222ED4, #14156B);
+	           background: -o-linear-gradient(#222ED4, #14156B);
+	           background: linear-gradient(#222ED4, #14156B);
+
+	-webkit-border-radius: 2px;
+	   -moz-border-radius: 2px;
+	        border-radius: 2px;
 }
 
 *::-webkit-scrollbar-thumb:hover
 {
+	background: -webkit-gradient(linear, left top, left bottom, from(#626CF5), to(#292A96));
+	background: -webkit-linear-gradient(#626CF5, #292A96);
+	background: -moz-linear-gradient(#626CF5, #292A96);
+	background: -o-linear-gradient(#626CF5, #292A96);
 	background: linear-gradient(#626CF5, #292A96);
 }
 
@@ -72,7 +86,9 @@ body
 {
 	*::-webkit-scrollbar-thumb:hover
 	{
-		box-shadow: none !important; /* simplify the effect in edge */
+		-webkit-box-shadow: none !important;
+		   -moz-box-shadow: none !important;
+		        box-shadow: none !important; /* simplify the effect in edge */
 	}
 }
 /* *************************** [^] SCROLL BAR [^] *************************** */
@@ -95,47 +111,88 @@ body h1.seo
 	                  right: 0;
 	                 height: 154px;
 	                z-index: 90;
+	                display: -webkit-box;
+	                display: -webkit-flex;
+	                display: -moz-box;
+	                display: -ms-flexbox;
 	                display: flex;
 	               position: fixed;
-	             box-shadow: none;
 	             background: rgba(18, 19, 21, 0.25);
-	            align-items: center;
+	        -moz-transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease, height 1s ease, -moz-box-shadow 0.35s ease;
+
+	-webkit-backdrop-filter: blur(10px);
 	        backdrop-filter: blur(10px);
+
+	     -webkit-box-shadow: none;
+	        -moz-box-shadow: none;
+	             box-shadow: none;
+
+	      -webkit-box-align: center;
+	    -webkit-align-items: center;
+	         -moz-box-align: center;
+	         -ms-flex-align: center;
+	            align-items: center;
 
 	-webkit-backdrop-filter: blur(20px);
 	        backdrop-filter: blur(20px);
 
-	     -webkit-transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease, height 1s ease;
-	        -moz-transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease, height 1s ease;
+	     -webkit-transition: background 0.35s ease, border-color 0.35s ease, -webkit-box-shadow 0.35s ease, height 1s ease;
+	        -moz-transition: background 0.35s ease, border-color 0.35s ease, -moz-box-shadow 0.35s ease, height 1s ease;
 	          -o-transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease, height 1s ease;
 	             transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease, height 1s ease;
 }
 
 .header.scrolled
 {
-	    height: 84px;
-	box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
-	background: rgb(18 19 21 / 81%);
+	            height: 84px;
+	        background: rgba(18, 19, 21, 0.81);
+
+	-webkit-box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+	   -moz-box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+	        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
 }
 
 .header_inner
 {
-	            gap: 24px;
-	          width: 100%;
-	         margin: 0 auto;
-	        display: flex;
-	        padding: 0 26px;
-	      max-width: 1320px;
-	    align-items: center;
-	justify-content: space-between;
+	                    gap: 24px;
+	                  width: 100%;
+	                 margin: 0 auto;
+	                display: -webkit-box;
+	                display: -webkit-flex;
+	                display: -moz-box;
+	                display: -ms-flexbox;
+	                display: flex;
+	                padding: 0 26px;
+	              max-width: 1320px;
+
+	      -webkit-box-align: center;
+	    -webkit-align-items: center;
+	         -moz-box-align: center;
+	         -ms-flex-align: center;
+	            align-items: center;
+
+	       -webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	          -moz-box-pack: justify;
+	          -ms-flex-pack: justify;
+	        justify-content: space-between;
 }
 
 .logo
 {
-	            gap: 13px;
-	        display: flex;
-	    align-items: center;
-	text-decoration: none;
+	                gap: 13px;
+	            display: -webkit-box;
+	            display: -webkit-flex;
+	            display: -moz-box;
+	            display: -ms-flexbox;
+	            display: flex;
+	    text-decoration: none;
+
+	  -webkit-box-align: center;
+	-webkit-align-items: center;
+	     -moz-box-align: center;
+	     -ms-flex-align: center;
+	        align-items: center;
 }
 
 .logo_mark
@@ -149,9 +206,20 @@ body h1.seo
 
 .logo_text
 {
-	       display: flex;
-	   line-height: 1;
-	flex-direction: column;
+	               display: -webkit-box;
+	               display: -webkit-flex;
+	               display: -moz-box;
+	               display: -ms-flexbox;
+	               display: flex;
+	           line-height: 1;
+
+	    -webkit-box-orient: vertical;
+	 -webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	       -moz-box-orient: vertical;
+	    -moz-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
 }
 
 .logo_title
@@ -198,86 +266,140 @@ body h1.seo
 
 .nav
 {
-	        gap: 4px;
-	    display: flex;
-	align-items: center;
+	                gap: 4px;
+	            display: -webkit-box;
+	            display: -webkit-flex;
+	            display: -moz-box;
+	            display: -ms-flexbox;
+	            display: flex;
+
+	  -webkit-box-align: center;
+	-webkit-align-items: center;
+	     -moz-box-align: center;
+	     -ms-flex-align: center;
+	        align-items: center;
 }
 
 .nav_link
 {
-	             color: #E7E9EC;
-	           padding: 9px 13px;
-	         font-size: 14px;
-	       font-weight: 600;
-	     border-radius: 7px;
-	    letter-spacing: 0.3px;
-	   text-decoration: none;
+	                color: #E7E9EC;
+	              padding: 9px 13px;
+	            font-size: 14px;
+	          font-weight: 600;
+	       letter-spacing: 0.3px;
+	      text-decoration: none;
 
-	-webkit-transition: color 0.2s ease, background 0.2s ease;
-	   -moz-transition: color 0.2s ease, background 0.2s ease;
-	     -o-transition: color 0.2s ease, background 0.2s ease;
-	        transition: color 0.2s ease, background 0.2s ease;
+	-webkit-border-radius: 7px;
+	   -moz-border-radius: 7px;
+	        border-radius: 7px;
+
+	   -webkit-transition: color 0.2s ease, background 0.2s ease;
+	      -moz-transition: color 0.2s ease, background 0.2s ease;
+	        -o-transition: color 0.2s ease, background 0.2s ease;
+	           transition: color 0.2s ease, background 0.2s ease;
 }
 
 .nav_link:hover
 {
 	     color: #FFF;
-	background: rgb(34 55 212 / 18%);
+	background: rgba(34, 55, 212, 0.18);
 }
 
 .nav_whatsapp
 {
-	               gap: 8px;
-	             color: #FFF;
-	           display: flex;
-	           padding: 11px 18px;
-	         font-size: 13.5px;
-	        background: #1FAF54;
-	        box-shadow: 0 6px 18px rgba(31, 175, 84, 0.4);
-	       margin-left: 10px;
-	       font-weight: 700;
-	       align-items: center;
-	     border-radius: 9px;
-	   text-decoration: none;
+	                  gap: 8px;
+	                color: #FFF;
+	              display: -webkit-box;
+	              display: -webkit-flex;
+	              display: -moz-box;
+	              display: -ms-flexbox;
+	              display: flex;
+	              padding: 11px 18px;
+	            font-size: 13.5px;
+	           background: #1FAF54;
+	          font-weight: 700;
+	          margin-left: 10px;
+	      text-decoration: none;
+	        -o-transition: box-shadow 0.2s ease, -o-transform 0.2s ease;
+	      -moz-transition: transform 0.2s ease, box-shadow 0.2s ease, -moz-transform 0.2s ease, -moz-box-shadow 0.2s ease;
 
-	-webkit-transition: transform 0.2s ease, box-shadow 0.2s ease;
-	   -moz-transition: transform 0.2s ease, box-shadow 0.2s ease;
-	     -o-transition: transform 0.2s ease, box-shadow 0.2s ease;
-	        transition: transform 0.2s ease, box-shadow 0.2s ease;
+	   -webkit-box-shadow: 0 6px 18px rgba(31, 175, 84, 0.4);
+	      -moz-box-shadow: 0 6px 18px rgba(31, 175, 84, 0.4);
+	           box-shadow: 0 6px 18px rgba(31, 175, 84, 0.4);
+
+	    -webkit-box-align: center;
+	  -webkit-align-items: center;
+	       -moz-box-align: center;
+	       -ms-flex-align: center;
+	          align-items: center;
+
+	-webkit-border-radius: 9px;
+	   -moz-border-radius: 9px;
+	        border-radius: 9px;
+
+	   -webkit-transition: -webkit-transform 0.2s ease, -webkit-box-shadow 0.2s ease;
+	      -moz-transition: -moz-transform 0.2s ease, -moz-box-shadow 0.2s ease;
+	        -o-transition: -o-transform 0.2s ease, box-shadow 0.2s ease;
+	           transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .nav_whatsapp:hover
 {
-	       box-shadow: 0 10px 26px rgba(31, 175, 84, 0.55);
+	-webkit-box-shadow: 0 10px 26px rgba(31, 175, 84, 0.55);
+	   -moz-box-shadow: 0 10px 26px rgba(31, 175, 84, 0.55);
+	        box-shadow: 0 10px 26px rgba(31, 175, 84, 0.55);
 
-	-webkit-transform: translateY(-2px);
-	   -moz-transform: translateY(-2px);
-	    -ms-transform: translateY(-2px);
-	     -o-transform: translateY(-2px);
-	        transform: translateY(-2px);
+	 -webkit-transform: translateY(-2px);
+	    -moz-transform: translateY(-2px);
+	     -ms-transform: translateY(-2px);
+	      -o-transform: translateY(-2px);
+	         transform: translateY(-2px);
 }
 
 .burger
 {
-	            gap: 5px;
-	          width: 46px;
-	         height: 44px;
-	         border: 1.5px solid #E7E9EC;
-	         cursor: pointer;
-	        display: none;
-	     background: transparent;
-	    align-items: center;
-	  border-radius: 9px;
-	 flex-direction: column;
-	justify-content: center;
+	                    gap: 5px;
+	                  width: 46px;
+	                 height: 44px;
+	                 border: 1.5px solid #E7E9EC;
+	                 cursor: pointer;
+	                display: none;
+	             background: transparent;
+
+	      -webkit-box-align: center;
+	    -webkit-align-items: center;
+	         -moz-box-align: center;
+	         -ms-flex-align: center;
+	            align-items: center;
+
+	  -webkit-border-radius: 9px;
+	     -moz-border-radius: 9px;
+	          border-radius: 9px;
+
+	     -webkit-box-orient: vertical;
+	  -webkit-box-direction: normal;
+	 -webkit-flex-direction: column;
+	        -moz-box-orient: vertical;
+	     -moz-box-direction: normal;
+	     -ms-flex-direction: column;
+	         flex-direction: column;
+
+	       -webkit-box-pack: center;
+	-webkit-justify-content: center;
+	          -moz-box-pack: center;
+	          -ms-flex-pack: center;
+	        justify-content: center;
 }
 
 .burger_line
 {
-	        width: 22px;
-	       height: 2.4px;
-	   background: #E7E9EC;
-	border-radius: 2px;
+	                width: 22px;
+	               height: 2.4px;
+	           background: #E7E9EC;
+
+	-webkit-border-radius: 2px;
+	   -moz-border-radius: 2px;
+	        border-radius: 2px;
 }
 
 .mobile_menu
@@ -287,9 +409,26 @@ body h1.seo
 	                display: none;
 	                z-index: 95;
 	               position: fixed;
-	             background: rgb(9 8 12 / 97%);
+	             background: rgba(9, 8, 12, 0.97);
+
+	      -webkit-box-align: center;
+	    -webkit-align-items: center;
+	         -moz-box-align: center;
+	         -ms-flex-align: center;
 	            align-items: center;
+
+	     -webkit-box-orient: vertical;
+	  -webkit-box-direction: normal;
+	 -webkit-flex-direction: column;
+	        -moz-box-orient: vertical;
+	     -moz-box-direction: normal;
+	     -ms-flex-direction: column;
 	         flex-direction: column;
+
+	       -webkit-box-pack: center;
+	-webkit-justify-content: center;
+	          -moz-box-pack: center;
+	          -ms-flex-pack: center;
 	        justify-content: center;
 
 	-webkit-backdrop-filter: blur(8px);
@@ -298,17 +437,20 @@ body h1.seo
 
 .mobile_menu_close
 {
-	          top: 26px;
-	        right: 26px;
-	        color: #FFF;
-	        width: 48px;
-	       border: none;
-	       height: 48px;
-	       cursor: pointer;
-	     position: absolute;
-	    font-size: 26px;
-	   background: #2225D4;
-	border-radius: 50%;
+	                  top: 26px;
+	                right: 26px;
+	                color: #FFF;
+	                width: 48px;
+	               border: none;
+	               height: 48px;
+	               cursor: pointer;
+	             position: absolute;
+	            font-size: 26px;
+	           background: #2225D4;
+
+	-webkit-border-radius: 50%;
+	   -moz-border-radius: 50%;
+	        border-radius: 50%;
 }
 
 .mobile_menu_link
@@ -323,13 +465,22 @@ body h1.seo
 
 .hero
 {
-	    display: flex;
-	    padding: 200px 0 70px;
-	   overflow: hidden;
-	   position: relative;
-	 min-height: 100vh;
-	 background: #040516;
-	align-items: center;
+	            display: -webkit-box;
+	            display: -webkit-flex;
+	            display: -moz-box;
+	            display: -ms-flexbox;
+	            display: flex;
+	            padding: 200px 0 70px;
+	           overflow: hidden;
+	           position: relative;
+	         min-height: 100vh;
+	         background: #040516;
+
+	  -webkit-box-align: center;
+	-webkit-align-items: center;
+	     -moz-box-align: center;
+	     -ms-flex-align: center;
+	        align-items: center;
 }
 
 .hero_layer
@@ -345,23 +496,36 @@ body h1.seo
 
 .hero_shade_1
 {
-	background: linear-gradient(100deg, rgb(4 4 16 / 96%) 0%, rgb(5 5 20 / 92%) 42%, rgb(7 6 26 / 86%) 72%, rgb(7 9 30 / 84%) 100%)
+	background: -webkit-linear-gradient(350deg, rgba(4, 4, 16, 0.96) 0%, rgba(5, 5, 20, 0.92) 42%, rgba(7, 6, 26, 0.86) 72%, rgba(7, 9, 30, 0.84) 100%);
+	background: -moz-linear-gradient(350deg, rgba(4, 4, 16, 0.96) 0%, rgba(5, 5, 20, 0.92) 42%, rgba(7, 6, 26, 0.86) 72%, rgba(7, 9, 30, 0.84) 100%);
+	background: -o-linear-gradient(350deg, rgba(4, 4, 16, 0.96) 0%, rgba(5, 5, 20, 0.92) 42%, rgba(7, 6, 26, 0.86) 72%, rgba(7, 9, 30, 0.84) 100%);
+	background: linear-gradient(100deg, rgba(4, 4, 16, 0.96) 0%, rgba(5, 5, 20, 0.92) 42%, rgba(7, 6, 26, 0.86) 72%, rgba(7, 9, 30, 0.84) 100%);
 }
 
 .hero_shade_2
 {
-	background: radial-gradient(120% 90% at 16% 14%, rgb(24 60 140 / 50%) 0%, transparent 58%)
+	background: -webkit-radial-gradient(16% 14%, 120% 90%, rgba(24, 60, 140, 0.5) 0%, transparent 58%);
+	background: -moz-radial-gradient(16% 14%, 120% 90%, rgba(24, 60, 140, 0.5) 0%, transparent 58%);
+	background: -o-radial-gradient(16% 14%, 120% 90%, rgba(24, 60, 140, 0.5) 0%, transparent 58%);
+	background: radial-gradient(120% 90% at 16% 14%, rgba(24, 60, 140, 0.5) 0%, transparent 58%);
 }
 
 .hero_shade_3
 {
-	background: linear-gradient(180deg, rgb(6 4 15 / 55%), transparent 24%, transparent 76%, rgb(4 4 15 / 65%))
+	background: -webkit-gradient(linear, left top, left bottom, from(rgba(6, 4, 15, 0.55)), color-stop(24%, transparent), color-stop(76%, transparent), to(rgba(4, 4, 15, 0.65)));
+	background: -webkit-linear-gradient(270deg, rgba(6, 4, 15, 0.55), transparent 24%, transparent 76%, rgba(4, 4, 15, 0.65));
+	background: -moz-linear-gradient(270deg, rgba(6, 4, 15, 0.55), transparent 24%, transparent 76%, rgba(4, 4, 15, 0.65));
+	background: -o-linear-gradient(270deg, rgba(6, 4, 15, 0.55), transparent 24%, transparent 76%, rgba(4, 4, 15, 0.65));
+	background: linear-gradient(180deg, rgba(6, 4, 15, 0.55), transparent 24%, transparent 76%, rgba(4, 4, 15, 0.65));
 }
 
 .hero_glow
 {
-	     position: absolute;
-	border-radius: 50%;
+	             position: absolute;
+
+	-webkit-border-radius: 50%;
+	   -moz-border-radius: 50%;
+	        border-radius: 50%;
 }
 
 .hero_glow_1
@@ -370,7 +534,10 @@ body h1.seo
 	             left: -10%;
 	            width: 560px;
 	           height: 560px;
-	       background: radial-gradient(circle, rgb(34 37 212 / 50%), transparent 65%);
+	       background: -webkit-radial-gradient(circle, rgba(34, 37, 212, 0.5), transparent 65%);
+	       background: -moz-radial-gradient(circle, rgba(34, 37, 212, 0.5), transparent 65%);
+	       background: -o-radial-gradient(circle, rgba(34, 37, 212, 0.5), transparent 65%);
+	       background: radial-gradient(circle, rgba(34, 37, 212, 0.5), transparent 65%);
 
 	   -webkit-filter: blur(10px);
 	           filter: blur(10px);
@@ -387,7 +554,10 @@ body h1.seo
 	            width: 620px;
 	           bottom: -20%;
 	           height: 620px;
-	       background: radial-gradient(circle, rgb(18 26 140 / 55%), transparent 68%);
+	       background: -webkit-radial-gradient(circle, rgba(18, 26, 140, 0.55), transparent 68%);
+	       background: -moz-radial-gradient(circle, rgba(18, 26, 140, 0.55), transparent 68%);
+	       background: -o-radial-gradient(circle, rgba(18, 26, 140, 0.55), transparent 68%);
+	       background: radial-gradient(circle, rgba(18, 26, 140, 0.55), transparent 68%);
 
 	   -webkit-filter: blur(8px);
 	           filter: blur(8px);
@@ -406,44 +576,65 @@ body h1.seo
 
 .drip_1
 {
-	             left: 22%;
-	            width: 7px;
-	           height: 34px;
-	       background: linear-gradient(#1A46E2, #0F248C);
-	    border-radius: 0 0 7px 7px;
+	                 left: 22%;
+	                width: 7px;
+	               height: 34px;
+	           background: -webkit-gradient(linear, left top, left bottom, from(#1A46E2), to(#0F248C));
+	           background: -webkit-linear-gradient(#1A46E2, #0F248C);
+	           background: -moz-linear-gradient(#1A46E2, #0F248C);
+	           background: -o-linear-gradient(#1A46E2, #0F248C);
+	           background: linear-gradient(#1A46E2, #0F248C);
 
-	-webkit-animation: drip 5.5s ease-in 1s infinite;
-	   -moz-animation: drip 5.5s ease-in 1s infinite;
-	     -o-animation: drip 5.5s ease-in 1s infinite;
-	        animation: drip 5.5s ease-in 1s infinite;
+	-webkit-border-radius: 0 0 7px 7px;
+	   -moz-border-radius: 0 0 7px 7px;
+	        border-radius: 0 0 7px 7px;
+
+	    -webkit-animation: drip 5.5s ease-in 1s infinite;
+	       -moz-animation: drip 5.5s ease-in 1s infinite;
+	         -o-animation: drip 5.5s ease-in 1s infinite;
+	            animation: drip 5.5s ease-in 1s infinite;
 }
 
 .drip_2
 {
-	             left: 63%;
-	            width: 5px;
-	           height: 26px;
-	       background: linear-gradient(#4ECFF2, #1260C9);
-	    border-radius: 0 0 6px 6px;
+	                 left: 63%;
+	                width: 5px;
+	               height: 26px;
+	           background: -webkit-gradient(linear, left top, left bottom, from(#4ECFF2), to(#1260C9));
+	           background: -webkit-linear-gradient(#4ECFF2, #1260C9);
+	           background: -moz-linear-gradient(#4ECFF2, #1260C9);
+	           background: -o-linear-gradient(#4ECFF2, #1260C9);
+	           background: linear-gradient(#4ECFF2, #1260C9);
 
-	-webkit-animation: drip 7s ease-in 2.4s infinite;
-	   -moz-animation: drip 7s ease-in 2.4s infinite;
-	     -o-animation: drip 7s ease-in 2.4s infinite;
-	        animation: drip 7s ease-in 2.4s infinite;
+	-webkit-border-radius: 0 0 6px 6px;
+	   -moz-border-radius: 0 0 6px 6px;
+	        border-radius: 0 0 6px 6px;
+
+	    -webkit-animation: drip 7s ease-in 2.4s infinite;
+	       -moz-animation: drip 7s ease-in 2.4s infinite;
+	         -o-animation: drip 7s ease-in 2.4s infinite;
+	            animation: drip 7s ease-in 2.4s infinite;
 }
 
 .drip_3
 {
-	             left: 82%;
-	            width: 6px;
-	           height: 30px;
-	       background: linear-gradient(#225CD4, #14236B);
-	    border-radius: 0 0 6px 6px;
+	                 left: 82%;
+	                width: 6px;
+	               height: 30px;
+	           background: -webkit-gradient(linear, left top, left bottom, from(#225CD4), to(#14236B));
+	           background: -webkit-linear-gradient(#225CD4, #14236B);
+	           background: -moz-linear-gradient(#225CD4, #14236B);
+	           background: -o-linear-gradient(#225CD4, #14236B);
+	           background: linear-gradient(#225CD4, #14236B);
 
-	-webkit-animation: drip 6.2s ease-in 3.6s infinite;
-	   -moz-animation: drip 6.2s ease-in 3.6s infinite;
-	     -o-animation: drip 6.2s ease-in 3.6s infinite;
-	        animation: drip 6.2s ease-in 3.6s infinite;
+	-webkit-border-radius: 0 0 6px 6px;
+	   -moz-border-radius: 0 0 6px 6px;
+	        border-radius: 0 0 6px 6px;
+
+	    -webkit-animation: drip 6.2s ease-in 3.6s infinite;
+	       -moz-animation: drip 6.2s ease-in 3.6s infinite;
+	         -o-animation: drip 6.2s ease-in 3.6s infinite;
+	            animation: drip 6.2s ease-in 3.6s infinite;
 }
 
 .hero_inner
@@ -452,12 +643,18 @@ body h1.seo
 	                width: 100%;
 	               margin: 0 auto;
 	              z-index: 3;
+	              display: -ms-grid;
 	              display: grid;
 	              padding: 0 26px;
 	             position: relative;
 	            max-width: 1320px;
-	          align-items: center;
 	grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+
+	    -webkit-box-align: center;
+	  -webkit-align-items: center;
+	       -moz-box-align: center;
+	       -ms-flex-align: center;
+	          align-items: center;
 }
 
 .hero_text
@@ -467,27 +664,45 @@ body h1.seo
 
 .hero_badge
 {
-	              gap: 10px;
-	           border: 1px solid rgb(34 37 212 / 50%);
-	          display: inline-flex;
-	          padding: 8px 16px;
-	       background: rgb(50 34 212 / 16%);
-	      align-items: center;
-	    border-radius: 30px;
+	                  gap: 10px;
+	               border: 1px solid rgba(34, 37, 212, 0.5);
+	              display: -webkit-inline-box;
+	              display: -webkit-inline-flex;
+	              display: -moz-inline-box;
+	              display: -ms-inline-flexbox;
+	              display: inline-flex;
+	              padding: 8px 16px;
+	           background: rgba(50, 34, 212, 0.16);
 
-	-webkit-animation: fade_up 0.7s both;
-	   -moz-animation: fade_up 0.7s both;
-	     -o-animation: fade_up 0.7s both;
-	        animation: fade_up 0.7s both;
+	    -webkit-box-align: center;
+	  -webkit-align-items: center;
+	       -moz-box-align: center;
+	       -ms-flex-align: center;
+	          align-items: center;
+
+	-webkit-border-radius: 30px;
+	   -moz-border-radius: 30px;
+	        border-radius: 30px;
+
+	    -webkit-animation: fade_up 0.7s both;
+	       -moz-animation: fade_up 0.7s both;
+	         -o-animation: fade_up 0.7s both;
+	            animation: fade_up 0.7s both;
 }
 
 .hero_badge_dot
 {
-	        width: 7px;
-	       height: 7px;
-	   background: #1A46E2;
-	   box-shadow: 0 0 10px #1A1DE2;
-	border-radius: 50%;
+	                width: 7px;
+	               height: 7px;
+	           background: #1A46E2;
+
+	   -webkit-box-shadow: 0 0 10px #1A1DE2;
+	      -moz-box-shadow: 0 0 10px #1A1DE2;
+	           box-shadow: 0 0 10px #1A1DE2;
+
+	-webkit-border-radius: 50%;
+	   -moz-border-radius: 50%;
+	        border-radius: 50%;
 }
 
 .hero_badge_text
@@ -520,7 +735,10 @@ body h1.seo
 	                  color: transparent;
 	                display: inline-block;
 	               position: relative;
-	             background: linear-gradient(100deg, #545fff, #2224d4 55%, #0f1e8c);
+	             background: -webkit-linear-gradient(350deg, #545FFF, #2224D4 55%, #0F1E8C);
+	             background: -moz-linear-gradient(350deg, #545FFF, #2224D4 55%, #0F1E8C);
+	             background: -o-linear-gradient(350deg, #545FFF, #2224D4 55%, #0F1E8C);
+	             background: linear-gradient(100deg, #545FFF, #2224D4 55%, #0F1E8C);
 
 	-webkit-background-clip: text;
 	        background-clip: text;
@@ -556,9 +774,16 @@ body h1.seo
 .hero_buttons
 {
 	              gap: 14px;
+	          display: -webkit-box;
+	          display: -webkit-flex;
+	          display: -moz-box;
+	          display: -ms-flexbox;
 	          display: flex;
-	        flex-wrap: wrap;
 	       margin-top: 32px;
+
+	-webkit-flex-wrap: wrap;
+	    -ms-flex-wrap: wrap;
+	        flex-wrap: wrap;
 
 	-webkit-animation: fade_up 0.8s both 0.26s;
 	   -moz-animation: fade_up 0.8s both 0.26s;
@@ -568,36 +793,61 @@ body h1.seo
 
 .button
 {
-	            gap: 9px;
-	          color: #FFF;
-	        display: inline-flex;
-	        padding: 15px 26px;
-	      font-size: 15px;
-	    font-weight: 700;
-	    align-items: center;
-	  border-radius: 11px;
-	text-decoration: none;
+	                  gap: 9px;
+	                color: #FFF;
+	              display: -webkit-inline-box;
+	              display: -webkit-inline-flex;
+	              display: -moz-inline-box;
+	              display: -ms-inline-flexbox;
+	              display: inline-flex;
+	              padding: 15px 26px;
+	            font-size: 15px;
+	          font-weight: 700;
+	      text-decoration: none;
+
+	    -webkit-box-align: center;
+	  -webkit-align-items: center;
+	       -moz-box-align: center;
+	       -ms-flex-align: center;
+	          align-items: center;
+
+	-webkit-border-radius: 11px;
+	   -moz-border-radius: 11px;
+	        border-radius: 11px;
 }
 
 .button_blue
 {
-	        background: linear-gradient(135deg, #1a46e2, #1d10a0);
-	        box-shadow: 0 12px 30px rgb(34 55 212 / 45%);
+	        background: -webkit-linear-gradient(315deg, #1A46E2, #1D10A0);
+	        background: -moz-linear-gradient(315deg, #1A46E2, #1D10A0);
+	        background: -o-linear-gradient(315deg, #1A46E2, #1D10A0);
+	        background: linear-gradient(135deg, #1A46E2, #1D10A0);
+	     -o-transition: box-shadow 0.22s ease, -o-transform 0.22s ease;
+	   -moz-transition: transform 0.22s ease, box-shadow 0.22s ease, -moz-transform 0.22s ease, -moz-box-shadow 0.22s ease;
 
-	-webkit-transition: transform 0.22s ease, box-shadow 0.22s ease;
-	   -moz-transition: transform 0.22s ease, box-shadow 0.22s ease;
-	     -o-transition: transform 0.22s ease, box-shadow 0.22s ease;
+	-webkit-box-shadow: 0 12px 30px rgba(34, 55, 212, 0.45);
+	   -moz-box-shadow: 0 12px 30px rgba(34, 55, 212, 0.45);
+	        box-shadow: 0 12px 30px rgba(34, 55, 212, 0.45);
+
+	-webkit-transition: -webkit-transform 0.22s ease, -webkit-box-shadow 0.22s ease;
+	   -moz-transition: -moz-transform 0.22s ease, -moz-box-shadow 0.22s ease;
+	     -o-transition: -o-transform 0.22s ease, box-shadow 0.22s ease;
 	        transition: transform 0.22s ease, box-shadow 0.22s ease;
 }
 
 .button_green
 {
 	        background: #1FAF54;
+	     -o-transition: box-shadow 0.22s ease, -o-transform 0.22s ease;
+	   -moz-transition: transform 0.22s ease, box-shadow 0.22s ease, -moz-transform 0.22s ease, -moz-box-shadow 0.22s ease;
+
+	-webkit-box-shadow: 0 12px 30px rgba(31, 175, 84, 0.42);
+	   -moz-box-shadow: 0 12px 30px rgba(31, 175, 84, 0.42);
 	        box-shadow: 0 12px 30px rgba(31, 175, 84, 0.42);
 
-	-webkit-transition: transform 0.22s ease, box-shadow 0.22s ease;
-	   -moz-transition: transform 0.22s ease, box-shadow 0.22s ease;
-	     -o-transition: transform 0.22s ease, box-shadow 0.22s ease;
+	-webkit-transition: -webkit-transform 0.22s ease, -webkit-box-shadow 0.22s ease;
+	   -moz-transition: -moz-transform 0.22s ease, -moz-box-shadow 0.22s ease;
+	     -o-transition: -o-transform 0.22s ease, box-shadow 0.22s ease;
 	        transition: transform 0.22s ease, box-shadow 0.22s ease;
 }
 
@@ -621,9 +871,16 @@ body h1.seo
 .hero_stats
 {
 	              gap: 30px;
+	          display: -webkit-box;
+	          display: -webkit-flex;
+	          display: -moz-box;
+	          display: -ms-flexbox;
 	          display: flex;
-	        flex-wrap: wrap;
 	       margin-top: 40px;
+
+	-webkit-flex-wrap: wrap;
+	    -ms-flex-wrap: wrap;
+	        flex-wrap: wrap;
 
 	-webkit-animation: fade_up 0.8s both 0.32s;
 	   -moz-animation: fade_up 0.8s both 0.32s;
@@ -666,26 +923,38 @@ body h1.seo
 
 .hero_col_glow
 {
-	         inset: -6% -4%;
-	      position: absolute;
-	    background: radial-gradient(circle at 60% 35%, rgba(226, 35, 26, 0.4), transparent 70%);
-	 border-radius: 26px;
+	                inset: -6% -4%;
+	             position: absolute;
+	           background: -webkit-radial-gradient(60% 35%, circle, rgba(226, 35, 26, 0.4), transparent 70%);
+	           background: -moz-radial-gradient(60% 35%, circle, rgba(226, 35, 26, 0.4), transparent 70%);
+	           background: -o-radial-gradient(60% 35%, circle, rgba(226, 35, 26, 0.4), transparent 70%);
+	           background: radial-gradient(circle at 60% 35%, rgba(226, 35, 26, 0.4), transparent 70%);
 
-	-webkit-filter: blur(26px);
-	        filter: blur(26px);
+	-webkit-border-radius: 26px;
+	   -moz-border-radius: 26px;
+	        border-radius: 26px;
+
+	       -webkit-filter: blur(26px);
+	               filter: blur(26px);
 }
 
 .hero_slider
 {
-	        width: 100%;
-	       border: 1px solid rgba(255, 255, 255, 0.14);
-	     overflow: hidden;
-	     position: relative;
-	   min-height: 260px;
-	   background: #0D0D0F;
-	   box-shadow: 0 36px 80px rgba(0, 0, 0, 0.5);
-	 aspect-ratio: 16 / 9;
-	border-radius: 20px;
+	                width: 100%;
+	               border: 1px solid rgba(255, 255, 255, 0.14);
+	             overflow: hidden;
+	             position: relative;
+	           min-height: 260px;
+	           background: #0D0D0F;
+	         aspect-ratio: 16 / 9;
+
+	   -webkit-box-shadow: 0 36px 80px rgba(0, 0, 0, 0.5);
+	      -moz-box-shadow: 0 36px 80px rgba(0, 0, 0, 0.5);
+	           box-shadow: 0 36px 80px rgba(0, 0, 0, 0.5);
+
+	-webkit-border-radius: 20px;
+	   -moz-border-radius: 20px;
+	        border-radius: 20px;
 }
 
 .hero_slides
@@ -702,8 +971,10 @@ body h1.seo
 	           opacity: 0;
 	           z-index: 1;
 	          position: absolute;
-	        object-fit: fill;
 	    pointer-events: none;
+
+	     -o-object-fit: fill;
+	        object-fit: fill;
 
 	-webkit-transition: opacity 1.4s ease;
 	   -moz-transition: opacity 1.4s ease;
@@ -724,24 +995,31 @@ body h1.seo
 	    left: 22px;
 	  bottom: 20px;
 	 z-index: 5;
+	 display: -webkit-box;
+	 display: -webkit-flex;
+	 display: -moz-box;
+	 display: -ms-flexbox;
 	 display: flex;
 	position: absolute;
 }
 
 .hero_dot
 {
-	             width: 12px;
-	            border: none;
-	            height: 5px;
-	            cursor: pointer;
-	           padding: 0;
-	        background: rgba(21, 23, 26, 0.28);
-	     border-radius: 3px;
+	                width: 12px;
+	               border: none;
+	               height: 5px;
+	               cursor: pointer;
+	              padding: 0;
+	           background: rgba(21, 23, 26, 0.28);
 
-	-webkit-transition: background 0.3s ease, width 0.3s ease;
-	   -moz-transition: background 0.3s ease, width 0.3s ease;
-	     -o-transition: background 0.3s ease, width 0.3s ease;
-	        transition: background 0.3s ease, width 0.3s ease;
+	-webkit-border-radius: 3px;
+	   -moz-border-radius: 3px;
+	        border-radius: 3px;
+
+	   -webkit-transition: background 0.3s ease, width 0.3s ease;
+	      -moz-transition: background 0.3s ease, width 0.3s ease;
+	        -o-transition: background 0.3s ease, width 0.3s ease;
+	           transition: background 0.3s ease, width 0.3s ease;
 }
 
 .hero_dot.active
@@ -752,20 +1030,36 @@ body h1.seo
 
 .scroll_hint
 {
-	              gap: 7px;
-	             left: 50%;
-	           bottom: 22px;
-	          z-index: 3;
-	          display: flex;
-	         position: absolute;
-	      align-items: center;
-	   flex-direction: column;
+	                   gap: 7px;
+	                  left: 50%;
+	                bottom: 22px;
+	               z-index: 3;
+	               display: -webkit-box;
+	               display: -webkit-flex;
+	               display: -moz-box;
+	               display: -ms-flexbox;
+	               display: flex;
+	              position: absolute;
 
-	-webkit-transform: translateX(-50%);
-	   -moz-transform: translateX(-50%);
-	    -ms-transform: translateX(-50%);
-	     -o-transform: translateX(-50%);
-	        transform: translateX(-50%);
+	     -webkit-box-align: center;
+	   -webkit-align-items: center;
+	        -moz-box-align: center;
+	        -ms-flex-align: center;
+	           align-items: center;
+
+	    -webkit-box-orient: vertical;
+	 -webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	       -moz-box-orient: vertical;
+	    -moz-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+
+	     -webkit-transform: translateX(-50%);
+	        -moz-transform: translateX(-50%);
+	         -ms-transform: translateX(-50%);
+	          -o-transform: translateX(-50%);
+	             transform: translateX(-50%);
 }
 
 .scroll_hint_text
@@ -778,26 +1072,41 @@ body h1.seo
 
 .scroll_mouse
 {
-	          width: 24px;
-	         height: 40px;
-	         border: 1.6px solid rgba(255, 255, 255, 0.4);
-	        display: flex;
-	    padding-top: 7px;
-	  border-radius: 13px;
-	justify-content: center;
+	                  width: 24px;
+	                 height: 40px;
+	                 border: 1.6px solid rgba(255, 255, 255, 0.4);
+	                display: -webkit-box;
+	                display: -webkit-flex;
+	                display: -moz-box;
+	                display: -ms-flexbox;
+	                display: flex;
+	            padding-top: 7px;
+
+	  -webkit-border-radius: 13px;
+	     -moz-border-radius: 13px;
+	          border-radius: 13px;
+
+	       -webkit-box-pack: center;
+	-webkit-justify-content: center;
+	          -moz-box-pack: center;
+	          -ms-flex-pack: center;
+	        justify-content: center;
 }
 
 .scroll_wheel
 {
-	            width: 4px;
-	           height: 8px;
-	       background: #FFF;
-	    border-radius: 3px;
+	                width: 4px;
+	               height: 8px;
+	           background: #FFF;
 
-	-webkit-animation: floaty 1.6s ease-in-out infinite;
-	   -moz-animation: floaty 1.6s ease-in-out infinite;
-	     -o-animation: floaty 1.6s ease-in-out infinite;
-	        animation: floaty 1.6s ease-in-out infinite;
+	-webkit-border-radius: 3px;
+	   -moz-border-radius: 3px;
+	        border-radius: 3px;
+
+	    -webkit-animation: floaty 1.6s ease-in-out infinite;
+	       -moz-animation: floaty 1.6s ease-in-out infinite;
+	         -o-animation: floaty 1.6s ease-in-out infinite;
+	            animation: floaty 1.6s ease-in-out infinite;
 }
 
 .marquee
@@ -805,13 +1114,19 @@ body h1.seo
 	   padding: 17px 0;
 	  overflow: hidden;
 	background: #121315;
-	border-top: 2px solid #2252d4;
+	border-top: 2px solid #2252D4;
 }
 
 .marquee_track
 {
 	              gap: 0;
+	            width: -webkit-max-content;
+	            width: -moz-max-content;
 	            width: max-content;
+	          display: -webkit-box;
+	          display: -webkit-flex;
+	          display: -moz-box;
+	          display: -ms-flexbox;
 	          display: flex;
 
 	-webkit-animation: marquee 28s linear infinite;
@@ -822,16 +1137,25 @@ body h1.seo
 
 .marquee_group
 {
-	           gap: 46px;
-	         color: #E7E9EC;
-	       display: flex;
-	     font-size: 19px;
-	   font-family: "oswald", sans-serif;
-	   font-weight: 500;
-	   white-space: nowrap;
-	   align-items: center;
-	 padding-right: 46px;
-	letter-spacing: 2px;
+	                gap: 46px;
+	              color: #E7E9EC;
+	            display: -webkit-box;
+	            display: -webkit-flex;
+	            display: -moz-box;
+	            display: -ms-flexbox;
+	            display: flex;
+	          font-size: 19px;
+	        font-family: "oswald", sans-serif;
+	        font-weight: 500;
+	        white-space: nowrap;
+	      padding-right: 46px;
+	     letter-spacing: 2px;
+
+	  -webkit-box-align: center;
+	-webkit-align-items: center;
+	     -moz-box-align: center;
+	     -ms-flex-align: center;
+	        align-items: center;
 }
 
 .marquee_diamond
@@ -909,7 +1233,7 @@ body h1.seo
 
 .brands_title_accent
 {
-	color: #3122d4;
+	color: #3122D4;
 }
 
 .brands_desc
@@ -923,47 +1247,74 @@ body h1.seo
 .brand_grid
 {
 	                  gap: 18px;
+	              display: -ms-grid;
 	              display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(116px, 1fr));
 }
 
 .brand_tile
 {
-	            border: 2px solid #111417;
-	            cursor: default;
-	           display: flex;
-	           padding: 16px;
-	          overflow: hidden;
-	          position: relative;
-	        background: #FFF;
-	        box-sizing: border-box;
-	       align-items: center;
-	      aspect-ratio: 1 / 1;
-	     border-radius: 16px;
-	   justify-content: center;
+	                 border: 2px solid #111417;
+	                 cursor: default;
+	                display: -webkit-box;
+	                display: -webkit-flex;
+	                display: -moz-box;
+	                display: -ms-flexbox;
+	                display: flex;
+	                padding: 16px;
+	               overflow: hidden;
+	               position: relative;
+	             background: #FFF;
+	           aspect-ratio: 1 / 1;
+	          -o-transition: box-shadow 0.3s ease, -o-transform 0.3s ease;
+	        -moz-transition: transform 0.3s ease, box-shadow 0.3s ease, -moz-transform 0.3s ease, -moz-box-shadow 0.3s ease;
 
-	-webkit-transition: transform 0.3s ease, box-shadow 0.3s ease;
-	   -moz-transition: transform 0.3s ease, box-shadow 0.3s ease;
-	     -o-transition: transform 0.3s ease, box-shadow 0.3s ease;
-	        transition: transform 0.3s ease, box-shadow 0.3s ease;
+	     -webkit-box-sizing: border-box;
+	        -moz-box-sizing: border-box;
+	             box-sizing: border-box;
+
+	      -webkit-box-align: center;
+	    -webkit-align-items: center;
+	         -moz-box-align: center;
+	         -ms-flex-align: center;
+	            align-items: center;
+
+	  -webkit-border-radius: 16px;
+	     -moz-border-radius: 16px;
+	          border-radius: 16px;
+
+	       -webkit-box-pack: center;
+	-webkit-justify-content: center;
+	          -moz-box-pack: center;
+	          -ms-flex-pack: center;
+	        justify-content: center;
+
+	     -webkit-transition: -webkit-transform 0.3s ease, -webkit-box-shadow 0.3s ease;
+	        -moz-transition: -moz-transform 0.3s ease, -moz-box-shadow 0.3s ease;
+	          -o-transition: -o-transform 0.3s ease, box-shadow 0.3s ease;
+	             transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .brand_tile:hover
 {
-	       box-shadow: 0 16px 32px rgba(0, 0, 0, 0.16);
+	-webkit-box-shadow: 0 16px 32px rgba(0, 0, 0, 0.16);
+	   -moz-box-shadow: 0 16px 32px rgba(0, 0, 0, 0.16);
+	        box-shadow: 0 16px 32px rgba(0, 0, 0, 0.16);
 
-	-webkit-transform: translateY(-6px);
-	   -moz-transform: translateY(-6px);
-	    -ms-transform: translateY(-6px);
-	     -o-transform: translateY(-6px);
-	        transform: translateY(-6px);
+	 -webkit-transform: translateY(-6px);
+	    -moz-transform: translateY(-6px);
+	     -ms-transform: translateY(-6px);
+	      -o-transform: translateY(-6px);
+	         transform: translateY(-6px);
 }
 
 .brand_logo
 {
-	 max-width: 100%;
-	object-fit: contain;
-	max-height: 100%;
+	    max-width: 100%;
+	   max-height: 100%;
+
+	-o-object-fit: contain;
+	   object-fit: contain;
 }
 
 .brand_name
@@ -1004,7 +1355,10 @@ body h1.seo
 	     right: 0;
 	    bottom: 0;
 	  position: absolute;
-	background: radial-gradient(60% 80% at 12% 30%, rgb(34 52 212 / 16%), transparent 60%)
+	background: -webkit-radial-gradient(12% 30%, 60% 80%, rgba(34, 52, 212, 0.16), transparent 60%);
+	background: -moz-radial-gradient(12% 30%, 60% 80%, rgba(34, 52, 212, 0.16), transparent 60%);
+	background: -o-radial-gradient(12% 30%, 60% 80%, rgba(34, 52, 212, 0.16), transparent 60%);
+	background: radial-gradient(60% 80% at 12% 30%, rgba(34, 52, 212, 0.16), transparent 60%);
 }
 
 .about_inner
@@ -1073,7 +1427,10 @@ body h1.seo
 {
 	     inset: 0;
 	  position: absolute;
-	background: radial-gradient(70% 60% at 80% 10%, rgb(34 34 212 / 16%), transparent 60%);
+	background: -webkit-radial-gradient(80% 10%, 70% 60%, rgba(34, 34, 212, 0.16), transparent 60%);
+	background: -moz-radial-gradient(80% 10%, 70% 60%, rgba(34, 34, 212, 0.16), transparent 60%);
+	background: -o-radial-gradient(80% 10%, 70% 60%, rgba(34, 34, 212, 0.16), transparent 60%);
+	background: radial-gradient(70% 60% at 80% 10%, rgba(34, 34, 212, 0.16), transparent 60%);
 }
 
 .why_head
@@ -1086,27 +1443,43 @@ body h1.seo
 .feature_grid
 {
 	                  gap: 18px;
+	              display: -ms-grid;
 	              display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
 }
 
 .feature
 {
-	               gap: 16px;
-	            border: 1px solid #2C2F34;
-	           display: flex;
-	           padding: 24px;
-	        background: linear-gradient(150deg, #1F2125, #191B1E);
-	     border-radius: 16px;
+	                  gap: 16px;
+	               border: 1px solid #2C2F34;
+	              display: -webkit-box;
+	              display: -webkit-flex;
+	              display: -moz-box;
+	              display: -ms-flexbox;
+	              display: flex;
+	              padding: 24px;
+	           background: -webkit-linear-gradient(300deg, #1F2125, #191B1E);
+	           background: -moz-linear-gradient(300deg, #1F2125, #191B1E);
+	           background: -o-linear-gradient(300deg, #1F2125, #191B1E);
+	           background: linear-gradient(150deg, #1F2125, #191B1E);
+	        -o-transition: border-color 0.3s ease, -o-transform 0.3s ease;
+	      -moz-transition: transform 0.3s ease, border-color 0.3s ease, -moz-transform 0.3s ease;
 
-	-webkit-transition: transform 0.3s ease, border-color 0.3s ease;
-	   -moz-transition: transform 0.3s ease, border-color 0.3s ease;
-	     -o-transition: transform 0.3s ease, border-color 0.3s ease;
-	        transition: transform 0.3s ease, border-color 0.3s ease;
+	-webkit-border-radius: 16px;
+	   -moz-border-radius: 16px;
+	        border-radius: 16px;
+
+	   -webkit-transition: -webkit-transform 0.3s ease, border-color 0.3s ease;
+	      -moz-transition: -moz-transform 0.3s ease, border-color 0.3s ease;
+	        -o-transition: -o-transform 0.3s ease, border-color 0.3s ease;
+	           transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
 .feature_whatsapp
 {
+	  background: -webkit-linear-gradient(300deg, #0F0F23, #0D0C1B);
+	  background: -moz-linear-gradient(300deg, #0F0F23, #0D0C1B);
+	  background: -o-linear-gradient(300deg, #0F0F23, #0D0C1B);
 	  background: linear-gradient(150deg, #0F0F23, #0D0C1B);
 	border-color: #1D1B5A;
 }
@@ -1124,14 +1497,34 @@ body h1.seo
 
 .feature_icon
 {
-	          width: 48px;
-	         height: 48px;
-	        display: flex;
-	     background: rgb(26 29 226 / 14%);
-	    flex-shrink: 0;
-	    align-items: center;
-	  border-radius: 12px;
-	justify-content: center;
+	                  width: 48px;
+	                 height: 48px;
+	                display: -webkit-box;
+	                display: -webkit-flex;
+	                display: -moz-box;
+	                display: -ms-flexbox;
+	                display: flex;
+	             background: rgba(26, 29, 226, 0.14);
+
+	    -webkit-flex-shrink: 0;
+	      -ms-flex-negative: 0;
+	            flex-shrink: 0;
+
+	      -webkit-box-align: center;
+	    -webkit-align-items: center;
+	         -moz-box-align: center;
+	         -ms-flex-align: center;
+	            align-items: center;
+
+	  -webkit-border-radius: 12px;
+	     -moz-border-radius: 12px;
+	          border-radius: 12px;
+
+	       -webkit-box-pack: center;
+	-webkit-justify-content: center;
+	          -moz-box-pack: center;
+	          -ms-flex-pack: center;
+	        justify-content: center;
 }
 
 .feature_icon_green
@@ -1163,6 +1556,10 @@ body h1.seo
 .contact
 {
 	   padding: 100px 0 104px;
+	background: -webkit-gradient(linear, left top, left bottom, from(#F5F6F8), to(#ECEEF1));
+	background: -webkit-linear-gradient(270deg, #F5F6F8, #ECEEF1);
+	background: -moz-linear-gradient(270deg, #F5F6F8, #ECEEF1);
+	background: -o-linear-gradient(270deg, #F5F6F8, #ECEEF1);
 	background: linear-gradient(180deg, #F5F6F8, #ECEEF1);
 }
 
@@ -1184,27 +1581,43 @@ body h1.seo
 .contact_grid
 {
 	                  gap: 26px;
+	              display: -ms-grid;
 	              display: grid;
-	          align-items: start;
 	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	    -webkit-box-align: start;
+	       -moz-box-align: start;
+	       -ms-flex-align: start;
+
+	  -webkit-align-items: start;
+	          align-items: start;
 }
 
 .contact_form
 {
-	        width: 622px;
-	       border: 1px solid #E3E6EA;
-	       height: 586px;
-	      padding: 34px;
-	    max-width: 100%;
-	   background: #FFF;
-	   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.06);
-	border-radius: 20px;
+	                width: 622px;
+	               border: 1px solid #E3E6EA;
+	               height: 586px;
+	              padding: 34px;
+	            max-width: 100%;
+	           background: #FFF;
+
+	   -webkit-box-shadow: 0 20px 50px rgba(0, 0, 0, 0.06);
+	      -moz-box-shadow: 0 20px 50px rgba(0, 0, 0, 0.06);
+	           box-shadow: 0 20px 50px rgba(0, 0, 0, 0.06);
+
+	-webkit-border-radius: 20px;
+	   -moz-border-radius: 20px;
+	        border-radius: 20px;
 }
 
 .form_row
 {
 	                  gap: 16px;
+	              display: -ms-grid;
 	              display: grid;
+	     -ms-grid-columns: 1fr 16px 1fr;
+
+	     -ms-grid-columns: 1fr 1fr;
 	grid-template-columns: 1fr 1fr;
 }
 
@@ -1228,14 +1641,17 @@ body h1.seo
 
 .field_input
 {
-	        width: 100%;
-	       border: 1.5px solid #DFE2E6;
-	      outline: none;
-	      padding: 13px 14px;
-	    font-size: 14.5px;
-	   margin-top: 7px;
-	  font-family: inherit;
-	border-radius: 10px;
+	                width: 100%;
+	               border: 1.5px solid #DFE2E6;
+	              outline: none;
+	              padding: 13px 14px;
+	            font-size: 14.5px;
+	           margin-top: 7px;
+	          font-family: inherit;
+
+	-webkit-border-radius: 10px;
+	   -moz-border-radius: 10px;
+	        border-radius: 10px;
 }
 
 .field_editable
@@ -1264,24 +1680,48 @@ body h1.seo
 
 .form_submit
 {
-	               gap: 9px;
-	             color: #FFF;
-	           display: flex;
-	           padding: 15px;
-	         font-size: 15.5px;
-	        background: linear-gradient(135deg, #1FAF54, #138A3F);
-	        box-shadow: 0 12px 28px rgba(31, 175, 84, 0.35);
-	        margin-top: 20px;
-	       font-weight: 700;
-	       align-items: center;
-	     border-radius: 11px;
-	   justify-content: center;
-	   text-decoration: none;
+	                    gap: 9px;
+	                  color: #FFF;
+	                display: -webkit-box;
+	                display: -webkit-flex;
+	                display: -moz-box;
+	                display: -ms-flexbox;
+	                display: flex;
+	                padding: 15px;
+	              font-size: 15.5px;
+	             background: -webkit-linear-gradient(315deg, #1FAF54, #138A3F);
+	             background: -moz-linear-gradient(315deg, #1FAF54, #138A3F);
+	             background: -o-linear-gradient(315deg, #1FAF54, #138A3F);
+	             background: linear-gradient(135deg, #1FAF54, #138A3F);
+	             margin-top: 20px;
+	            font-weight: 700;
+	        text-decoration: none;
+	        -moz-transition: transform 0.2s ease, -moz-transform 0.2s ease;
 
-	-webkit-transition: transform 0.2s ease;
-	   -moz-transition: transform 0.2s ease;
-	     -o-transition: transform 0.2s ease;
-	        transition: transform 0.2s ease;
+	     -webkit-box-shadow: 0 12px 28px rgba(31, 175, 84, 0.35);
+	        -moz-box-shadow: 0 12px 28px rgba(31, 175, 84, 0.35);
+	             box-shadow: 0 12px 28px rgba(31, 175, 84, 0.35);
+
+	      -webkit-box-align: center;
+	    -webkit-align-items: center;
+	         -moz-box-align: center;
+	         -ms-flex-align: center;
+	            align-items: center;
+
+	  -webkit-border-radius: 11px;
+	     -moz-border-radius: 11px;
+	          border-radius: 11px;
+
+	       -webkit-box-pack: center;
+	-webkit-justify-content: center;
+	          -moz-box-pack: center;
+	          -ms-flex-pack: center;
+	        justify-content: center;
+
+	     -webkit-transition: -webkit-transform 0.2s ease;
+	        -moz-transition: -moz-transform 0.2s ease;
+	          -o-transition: -o-transform 0.2s ease;
+	             transition: transform 0.2s ease;
 }
 
 .button_blue:hover,
@@ -1298,21 +1738,44 @@ body h1.seo
 
 .contact_info
 {
-	           gap: 16px;
-	       display: flex;
-	flex-direction: column;
+	                   gap: 16px;
+	               display: -webkit-box;
+	               display: -webkit-flex;
+	               display: -moz-box;
+	               display: -ms-flexbox;
+	               display: flex;
+
+	    -webkit-box-orient: vertical;
+	 -webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	       -moz-box-orient: vertical;
+	    -moz-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
 }
 
 .info_card
 {
-	            gap: 15px;
-	         border: 1px solid #E3E6EA;
-	        display: flex;
-	        padding: 22px;
-	     background: #FFF;
-	    align-items: center;
-	  border-radius: 16px;
-	text-decoration: none;
+	                  gap: 15px;
+	               border: 1px solid #E3E6EA;
+	              display: -webkit-box;
+	              display: -webkit-flex;
+	              display: -moz-box;
+	              display: -ms-flexbox;
+	              display: flex;
+	              padding: 22px;
+	           background: #FFF;
+	      text-decoration: none;
+
+	    -webkit-box-align: center;
+	  -webkit-align-items: center;
+	       -moz-box-align: center;
+	       -ms-flex-align: center;
+	          align-items: center;
+
+	-webkit-border-radius: 16px;
+	   -moz-border-radius: 16px;
+	        border-radius: 16px;
 }
 
 .info_card_dark
@@ -1323,9 +1786,11 @@ body h1.seo
 
 .info_link
 {
-	-webkit-transition: transform 0.25s ease;
-	   -moz-transition: transform 0.25s ease;
-	     -o-transition: transform 0.25s ease;
+	   -moz-transition: transform 0.25s ease, -moz-transform 0.25s ease;
+
+	-webkit-transition: -webkit-transform 0.25s ease;
+	   -moz-transition: -moz-transform 0.25s ease;
+	     -o-transition: -o-transform 0.25s ease;
 	        transition: transform 0.25s ease;
 }
 
@@ -1340,13 +1805,33 @@ body h1.seo
 
 .info_icon
 {
-	          width: 50px;
-	         height: 50px;
-	        display: flex;
-	    flex-shrink: 0;
-	    align-items: center;
-	  border-radius: 13px;
-	justify-content: center;
+	                  width: 50px;
+	                 height: 50px;
+	                display: -webkit-box;
+	                display: -webkit-flex;
+	                display: -moz-box;
+	                display: -ms-flexbox;
+	                display: flex;
+
+	    -webkit-flex-shrink: 0;
+	      -ms-flex-negative: 0;
+	            flex-shrink: 0;
+
+	      -webkit-box-align: center;
+	    -webkit-align-items: center;
+	         -moz-box-align: center;
+	         -ms-flex-align: center;
+	            align-items: center;
+
+	  -webkit-border-radius: 13px;
+	     -moz-border-radius: 13px;
+	          border-radius: 13px;
+
+	       -webkit-box-pack: center;
+	-webkit-justify-content: center;
+	          -moz-box-pack: center;
+	          -ms-flex-pack: center;
+	        justify-content: center;
 }
 
 .info_icon_green
@@ -1356,11 +1841,17 @@ body h1.seo
 
 .info_icon_red
 {
+	background: -webkit-linear-gradient(315deg, #1A33E2, #0F248C);
+	background: -moz-linear-gradient(315deg, #1A33E2, #0F248C);
+	background: -o-linear-gradient(315deg, #1A33E2, #0F248C);
 	background: linear-gradient(135deg, #1A33E2, #0F248C);
 }
 
 .info_icon_dark
 {
+	background: -webkit-linear-gradient(315deg, #3A3D42, #15171A);
+	background: -moz-linear-gradient(315deg, #3A3D42, #15171A);
+	background: -o-linear-gradient(315deg, #3A3D42, #15171A);
 	background: linear-gradient(135deg, #3A3D42, #15171A);
 }
 
@@ -1392,18 +1883,26 @@ body h1.seo
 
 .info_body
 {
-	     flex: 1;
-	min-width: 0;
+	       min-width: 0;
+	    moz-box-flex: 1;
+
+	-webkit-box-flex: 1;
+	    -webkit-flex: 1;
+	        -ms-flex: 1;
+	            flex: 1;
 }
 
 .map
 {
-	       border: 1px solid #E3E6EA;
-	       height: 230px;
-	     overflow: hidden;
-	     position: relative;
-	   background: #DFE3E7;
-	border-radius: 16px;
+	               border: 1px solid #E3E6EA;
+	               height: 230px;
+	             overflow: hidden;
+	             position: relative;
+	           background: #DFE3E7;
+
+	-webkit-border-radius: 16px;
+	   -moz-border-radius: 16px;
+	        border-radius: 16px;
 }
 
 .map_frame
@@ -1427,6 +1926,7 @@ body h1.seo
 {
 	                  gap: 40px;
 	               margin: 0 auto;
+	              display: -ms-grid;
 	              display: grid;
 	              padding: 0 26px;
 	            max-width: 1320px;
@@ -1435,9 +1935,18 @@ body h1.seo
 
 .footer_logo
 {
-	        gap: 12px;
-	    display: flex;
-	align-items: center;
+	                gap: 12px;
+	            display: -webkit-box;
+	            display: -webkit-flex;
+	            display: -moz-box;
+	            display: -ms-flexbox;
+	            display: flex;
+
+	  -webkit-box-align: center;
+	-webkit-align-items: center;
+	     -moz-box-align: center;
+	     -ms-flex-align: center;
+	        align-items: center;
 }
 
 .footer_logo_text
@@ -1488,9 +1997,20 @@ body h1.seo
 
 .footer_links
 {
-	           gap: 10px;
-	       display: flex;
-	flex-direction: column;
+	                   gap: 10px;
+	               display: -webkit-box;
+	               display: -webkit-flex;
+	               display: -moz-box;
+	               display: -ms-flexbox;
+	               display: flex;
+
+	    -webkit-box-orient: vertical;
+	 -webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	       -moz-box-orient: vertical;
+	    -moz-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
 }
 
 .footer_link
@@ -1502,28 +2022,52 @@ body h1.seo
 
 .footer_whatsapp
 {
-	            gap: 9px;
-	          color: #FFF;
-	        display: inline-flex;
-	        padding: 12px 18px;
-	      font-size: 14px;
-	     background: #1FAF54;
-	    font-weight: 700;
-	    align-items: center;
-	  border-radius: 10px;
-	text-decoration: none;
+	                  gap: 9px;
+	                color: #FFF;
+	              display: -webkit-inline-box;
+	              display: -webkit-inline-flex;
+	              display: -moz-inline-box;
+	              display: -ms-inline-flexbox;
+	              display: inline-flex;
+	              padding: 12px 18px;
+	            font-size: 14px;
+	           background: #1FAF54;
+	          font-weight: 700;
+	      text-decoration: none;
+
+	    -webkit-box-align: center;
+	  -webkit-align-items: center;
+	       -moz-box-align: center;
+	       -ms-flex-align: center;
+	          align-items: center;
+
+	-webkit-border-radius: 10px;
+	   -moz-border-radius: 10px;
+	        border-radius: 10px;
 }
 
 .footer_bottom
 {
-	            gap: 12px;
-	         margin: 40px auto 0;
-	        display: flex;
-	        padding: 22px 26px 0;
-	      flex-wrap: wrap;
-	      max-width: 1320px;
-	     border-top: 1px solid #1F2125;
-	justify-content: space-between;
+	                    gap: 12px;
+	                 margin: 40px auto 0;
+	                display: -webkit-box;
+	                display: -webkit-flex;
+	                display: -moz-box;
+	                display: -ms-flexbox;
+	                display: flex;
+	                padding: 22px 26px 0;
+	              max-width: 1320px;
+	             border-top: 1px solid #1F2125;
+
+	      -webkit-flex-wrap: wrap;
+	          -ms-flex-wrap: wrap;
+	              flex-wrap: wrap;
+
+	       -webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	          -moz-box-pack: justify;
+	          -ms-flex-pack: justify;
+	        justify-content: space-between;
 }
 
 .footer_note
@@ -1539,45 +2083,68 @@ body h1.seo
 
 .floating_whatsapp
 {
-	               gap: 12px;
-	             right: 26px;
-	             color: #FFF;
-	            bottom: 63px;
-	           z-index: 80;
-	           display: flex;
-	           padding: 14px 16px 14px 16px;
-	          position: fixed;
-	         font-size: 14.5px;
-	        background: #1FAF54;
-	        box-shadow: 0 14px 36px rgba(31, 175, 84, 0.5);
-	       font-weight: 700;
-	       align-items: center;
-	     border-radius: 50px;
-	   text-decoration: none;
+	                  gap: 12px;
+	                right: 26px;
+	                color: #FFF;
+	               bottom: 63px;
+	              z-index: 80;
+	              display: -webkit-box;
+	              display: -webkit-flex;
+	              display: -moz-box;
+	              display: -ms-flexbox;
+	              display: flex;
+	              padding: 14px 16px 14px 16px;
+	             position: fixed;
+	            font-size: 14.5px;
+	           background: #1FAF54;
+	          font-weight: 700;
+	      text-decoration: none;
+	      -moz-transition: transform 0.25s ease, -moz-transform 0.25s ease;
 
-	-webkit-transition: transform 0.25s ease;
-	   -moz-transition: transform 0.25s ease;
-	     -o-transition: transform 0.25s ease;
-	        transition: transform 0.25s ease;
+	   -webkit-box-shadow: 0 14px 36px rgba(31, 175, 84, 0.5);
+	      -moz-box-shadow: 0 14px 36px rgba(31, 175, 84, 0.5);
+	           box-shadow: 0 14px 36px rgba(31, 175, 84, 0.5);
+
+	    -webkit-box-align: center;
+	  -webkit-align-items: center;
+	       -moz-box-align: center;
+	       -ms-flex-align: center;
+	          align-items: center;
+
+	-webkit-border-radius: 50px;
+	   -moz-border-radius: 50px;
+	        border-radius: 50px;
+
+	   -webkit-transition: -webkit-transform 0.25s ease;
+	      -moz-transition: -moz-transform 0.25s ease;
+	        -o-transition: -o-transform 0.25s ease;
+	           transition: transform 0.25s ease;
 }
 
 .floating_icon
 {
+	 display: -webkit-box;
+	 display: -webkit-flex;
+	 display: -moz-box;
+	 display: -ms-flexbox;
 	 display: flex;
 	position: relative;
 }
 
 .floating_ring
 {
-	            inset: -7px;
-	           border: 2px solid #1FAF54;
-	         position: absolute;
-	    border-radius: 50%;
+	                inset: -7px;
+	               border: 2px solid #1FAF54;
+	             position: absolute;
 
-	-webkit-animation: ring 2.2s ease-out infinite;
-	   -moz-animation: ring 2.2s ease-out infinite;
-	     -o-animation: ring 2.2s ease-out infinite;
-	        animation: ring 2.2s ease-out infinite;
+	-webkit-border-radius: 50%;
+	   -moz-border-radius: 50%;
+	        border-radius: 50%;
+
+	    -webkit-animation: ring 2.2s ease-out infinite;
+	       -moz-animation: ring 2.2s ease-out infinite;
+	         -o-animation: ring 2.2s ease-out infinite;
+	            animation: ring 2.2s ease-out infinite;
 }
 
 .floating_label
@@ -1604,6 +2171,7 @@ body h1.seo
 .reveal_pending.reveal_visible
 {
 	           opacity: 1;
+	   -moz-transition: opacity 0.7s cubic-bezier(0.2, 0.7, 0.2, 1), transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1), -moz-transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
 
 	 -webkit-transform: none;
 	    -moz-transform: none;
@@ -1611,9 +2179,9 @@ body h1.seo
 	      -o-transform: none;
 	         transform: none;
 
-	-webkit-transition: opacity 0.7s cubic-bezier(0.2, 0.7, 0.2, 1), transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
-	   -moz-transition: opacity 0.7s cubic-bezier(0.2, 0.7, 0.2, 1), transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
-	     -o-transition: opacity 0.7s cubic-bezier(0.2, 0.7, 0.2, 1), transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+	-webkit-transition: opacity 0.7s cubic-bezier(0.2, 0.7, 0.2, 1), -webkit-transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+	   -moz-transition: opacity 0.7s cubic-bezier(0.2, 0.7, 0.2, 1), -moz-transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+	     -o-transition: opacity 0.7s cubic-bezier(0.2, 0.7, 0.2, 1), -o-transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
 	        transition: opacity 0.7s cubic-bezier(0.2, 0.7, 0.2, 1), transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
@@ -1628,6 +2196,10 @@ body h1.seo
 	.burger,
 	body.menu_open .mobile_menu
 	{
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: -moz-box;
+		display: -ms-flexbox;
 		display: flex;
 	}
 }
@@ -1644,28 +2216,39 @@ body h1.seo
 {
 	.hero_col
 	{
-		     width: 100%;
-		   padding: 0 18px;
-		box-sizing: border-box;
+		             width: 100%;
+		           padding: 0 18px;
+
+		-webkit-box-sizing: border-box;
+		   -moz-box-sizing: border-box;
+		        box-sizing: border-box;
 	}
 
 	.hero_slider
 	{
-		   min-height: 0;
-		border-radius: 16px;
+		           min-height: 0;
+
+		-webkit-border-radius: 16px;
+		   -moz-border-radius: 16px;
+		        border-radius: 16px;
 	}
 
 	.hero_dots
 	{
-		             left: 50%;
-		           bottom: 14px;
-		  justify-content: center;
+		                   left: 50%;
+		                 bottom: 14px;
 
-		-webkit-transform: translateX(-50%);
-		   -moz-transform: translateX(-50%);
-		    -ms-transform: translateX(-50%);
-		     -o-transform: translateX(-50%);
-		        transform: translateX(-50%);
+		       -webkit-box-pack: center;
+		-webkit-justify-content: center;
+		          -moz-box-pack: center;
+		          -ms-flex-pack: center;
+		        justify-content: center;
+
+		      -webkit-transform: translateX(-50%);
+		         -moz-transform: translateX(-50%);
+		          -ms-transform: translateX(-50%);
+		           -o-transform: translateX(-50%);
+		              transform: translateX(-50%);
 	}
 
 	.contact_form
@@ -1676,12 +2259,15 @@ body h1.seo
 
 	.form_row
 	{
+		     -ms-grid-columns: 1fr;
 		grid-template-columns: 1fr;
 	}
 
 	.addr_card
 	{
-		flex-wrap: wrap;
+		-webkit-flex-wrap: wrap;
+		    -ms-flex-wrap: wrap;
+		        flex-wrap: wrap;
 	}
 }
 
@@ -1746,16 +2332,24 @@ body h1.seo
 {
 	from
 	{
-		  opacity: 0;
+		          opacity: 0;
 
-		transform: translateY(34px);
+		-webkit-transform: translateY(34px);
+		   -moz-transform: translateY(34px);
+		    -ms-transform: translateY(34px);
+		     -o-transform: translateY(34px);
+		        transform: translateY(34px);
 	}
 
 	to
 	{
-		  opacity: 1;
+		          opacity: 1;
 
-		transform: none;
+		-webkit-transform: none;
+		   -moz-transform: none;
+		    -ms-transform: none;
+		     -o-transform: none;
+		        transform: none;
 	}
 }
 
@@ -1812,12 +2406,20 @@ body h1.seo
 	0%,
 	100%
 	{
-		transform: translateY(0) rotate(-1.4deg);
+		-webkit-transform: translateY(0) rotate(-1.4deg);
+		   -moz-transform: translateY(0) rotate(-1.4deg);
+		    -ms-transform: translateY(0) rotate(-1.4deg);
+		     -o-transform: translateY(0) rotate(-1.4deg);
+		        transform: translateY(0) rotate(-1.4deg);
 	}
 
 	50%
 	{
-		transform: translateY(-18px) rotate(-1.4deg);
+		-webkit-transform: translateY(-18px) rotate(-1.4deg);
+		   -moz-transform: translateY(-18px) rotate(-1.4deg);
+		    -ms-transform: translateY(-18px) rotate(-1.4deg);
+		     -o-transform: translateY(-18px) rotate(-1.4deg);
+		        transform: translateY(-18px) rotate(-1.4deg);
 	}
 }
 
@@ -1886,16 +2488,24 @@ body h1.seo
 	0%,
 	100%
 	{
-		  opacity: 0.55;
+		          opacity: 0.55;
 
-		transform: scale(1);
+		-webkit-transform: scale(1);
+		   -moz-transform: scale(1);
+		    -ms-transform: scale(1);
+		     -o-transform: scale(1);
+		        transform: scale(1);
 	}
 
 	50%
 	{
-		  opacity: 0.9;
+		          opacity: 0.9;
 
-		transform: scale(1.08);
+		-webkit-transform: scale(1.08);
+		   -moz-transform: scale(1.08);
+		    -ms-transform: scale(1.08);
+		     -o-transform: scale(1.08);
+		        transform: scale(1.08);
 	}
 }
 
@@ -1990,9 +2600,13 @@ body h1.seo
 {
 	0%
 	{
-		  opacity: 0;
+		          opacity: 0;
 
-		transform: translateY(-10px) scaleY(0.6);
+		-webkit-transform: translateY(-10px) scaleY(0.6);
+		   -moz-transform: translateY(-10px) scaleY(0.6);
+		    -ms-transform: translateY(-10px) scaleY(0.6);
+		     -o-transform: translateY(-10px) scaleY(0.6);
+		        transform: translateY(-10px) scaleY(0.6);
 	}
 
 	15%
@@ -2007,9 +2621,13 @@ body h1.seo
 
 	100%
 	{
-		  opacity: 0;
+		          opacity: 0;
 
-		transform: translateY(240px) scaleY(1.3);
+		-webkit-transform: translateY(240px) scaleY(1.3);
+		   -moz-transform: translateY(240px) scaleY(1.3);
+		    -ms-transform: translateY(240px) scaleY(1.3);
+		     -o-transform: translateY(240px) scaleY(1.3);
+		        transform: translateY(240px) scaleY(1.3);
 	}
 }
 
@@ -2062,12 +2680,20 @@ body h1.seo
 {
 	from
 	{
-		transform: translateX(0);
+		-webkit-transform: translateX(0);
+		   -moz-transform: translateX(0);
+		    -ms-transform: translateX(0);
+		     -o-transform: translateX(0);
+		        transform: translateX(0);
 	}
 
 	to
 	{
-		transform: translateX(-50%);
+		-webkit-transform: translateX(-50%);
+		   -moz-transform: translateX(-50%);
+		    -ms-transform: translateX(-50%);
+		     -o-transform: translateX(-50%);
+		        transform: translateX(-50%);
 	}
 }
 
@@ -2132,15 +2758,23 @@ body h1.seo
 {
 	0%
 	{
-		  opacity: 0.7;
+		          opacity: 0.7;
 
-		transform: scale(0.8);
+		-webkit-transform: scale(0.8);
+		   -moz-transform: scale(0.8);
+		    -ms-transform: scale(0.8);
+		     -o-transform: scale(0.8);
+		        transform: scale(0.8);
 	}
 
 	100%
 	{
-		  opacity: 0;
+		          opacity: 0;
 
-		transform: scale(2.1);
+		-webkit-transform: scale(2.1);
+		   -moz-transform: scale(2.1);
+		    -ms-transform: scale(2.1);
+		     -o-transform: scale(2.1);
+		        transform: scale(2.1);
 	}
 }
