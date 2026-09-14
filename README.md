@@ -23,4 +23,4 @@ git clone --depth 1 "git@github.com:Maximum-Tension/mavihirdavat.com.tr.git"
 # Copyright
 
 - This website is licensed under the MIT License.
-- *© Maximum Tension™ - 2023*
+- *© Maximum Tension™ - 2026*
