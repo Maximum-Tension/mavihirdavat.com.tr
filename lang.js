@@ -11,13 +11,4 @@
 # : License - MIT       :: Update - 2026/09/12 : #    ::::!!!1!!1!!!1!!!::     #
 # +.....................++.....................+ #       ::::!::!:::!::::      #
 \******************************************************************************/
-
-var		lang = "tr";
-const	lang_table = {
-	"tr": {
-		0: "Merhaba, Mavi Hırdavat! Ürünler hakkında bilgi ve fiyat teklifi almak istiyorum.",
-		1: "\n\nAd Soyad: ${name}\nTelefon: ${phone}\nE-posta: ${email}\nÜrün Grubu: ${group}\nMesaj: ${message}"
-	}
-};
-
-var		strings = lang_table[lang];
+var lang="tr";const lang_table={"tr":{0:"Merhaba, Mavi Hırdavat! Ürünler hakkında bilgi ve fiyat teklifi almak istiyorum.",1:"\n\nAd Soyad: ${name}\nTelefon: ${phone}\nE-posta: ${email}\nÜrün Grubu: ${group}\nMesaj: ${message}"}};var strings=lang_table[lang];
