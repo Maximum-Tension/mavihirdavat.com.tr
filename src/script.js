@@ -8,7 +8,7 @@
 # +.....................++.....................+ #   :!:: :!:!1:!:!::1:::!!!:  #
 # : C - Maximum Tension :: Create - 2026/09/12 : #   ::!::!!1001010!:!11!!::   #
 # :---------------------::---------------------: #   :!1!!11000000000011!!:    #
-# : License - MIT       :: Update - 2026/09/12 : #    ::::!!!1!!1!!!1!!!::     #
+# : License - MIT       :: Update - 2026/10/15 : #    ::::!!!1!!1!!!1!!!::     #
 # +.....................++.....................+ #       ::::!::!:::!::::      #
 \******************************************************************************/
 
@@ -241,18 +241,38 @@ function
 	form_whatsapp_link.href = whatsapp_url(message);
 }
 
+async function
+	print_console()
+{
+	try {if (window.self !== window.top) return ;} // INSIDE AN IFRAME
+	catch (ERROR) {return ;}
+
+	console.log("%c ",
+		"background-image: url(data:image/svg+xml;base64," +
+		 btoa(await AJAX.GET("/favicons/console_header.svg")) +
+		");" +
+		"padding-bottom: 200px;" +
+		"padding-left: 500px;" +
+		"width: 100%;" +
+		"margin: 20px;" +
+		"background-size: contain;" +
+		"background-position: center center;" +
+		"background-repeat: no-repeat;"
+	);
+}
+
 function
 	main()
 {
 	gallery_slides = to_array(DOM.GET.CLASS("hero_slide"));
 	gallery_dots = to_array(DOM.GET.CLASS("hero_dot"));
 
+	print_console();
 	update_whatsapp_links();
 	update_form_link();
 	prepare_reveal();
 	show_gallery_slide(0);
 	start_gallery_timer();
-
 	window.addEventListener("scroll", on_scroll, {passive: true});
 	window.addEventListener("resize", on_resize);
 	document.getElementById("year_date").textContent = new Date().getFullYear().toString();
